@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>NANCY HEELO</h1>
+    <button>stop</button>
+</body>
+</html>
+
+<script>
+    let head = document.querySelector('h1');
+
+    setTimeout( function(){
+        console.log('nancy');    
+    }, 2000)
+
+    const changeName = function(){
+        head.innerHTML = 'DA'
+    }
+    setTimeout(changeName, 2000)
+
+    document.querySelector('button').addEventListener('click', function(){
+        clearTimeout(changeName, 2000)
+        console.log('stop');
+        
+    });
+</script>

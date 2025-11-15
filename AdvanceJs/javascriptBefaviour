@@ -1,0 +1,15 @@
+Javascript is a synchormius language 
+synchornius means (one by one execution)
+it is also a single thread
+
+Execution Context
+
+GLOBAL Execution context (which refere this)
+Functional Execution Context
+Eval Execution Context (mongoose)
+
+Blocking code v/s non Blocking code
+
+Blocking code => blocak the flow of porgramm (read file sync)
+
+Non Blocking code => does not bock the flow of program (read file async)

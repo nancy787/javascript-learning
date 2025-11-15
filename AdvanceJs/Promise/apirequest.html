@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+    
+</body>
+
+<script>
+
+    let requestUrl = "https://api.github.com/users/nancy787";
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+            let data = JSON.parse(this.responseText)
+            let followers = data.followers;
+            let prorfileImage = data.avatar_url;
+            const element =  document.createElement('div')
+            element.className = "card";
+            element.style.backgroundImage = `url(${prorfileImage})`;
+            element.style.backgroundPosition = "center";
+            element.style.backgroundSize = "cover";
+            element.style.width = "100px";
+            element.style.height = "100px";
+            document.body.appendChild(element);
+            let followrsDiv = document.createElement('div');
+            followrsDiv.style.padding  = "10px"
+            followrsDiv.textContent = `followers : ${followers}`;
+            followrsDiv.style.color = "#ffff";
+            document.body.appendChild(followrsDiv);
+        }
+        
+    }
+    xhr.send()
+</script>
+</html>

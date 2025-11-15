@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myBtn{
+            padding: 15px;
+            margin: 10px;
+            background-color: aqua;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <label for="button"></label>
+    <input type="button" id="btn" class="myBtn" value="0">
+</body>
+</html>
+
+<script>
+    document.getElementById('btn').addEventListener('click', function(){
+        let btn = document.getElementById('btn');
+        let incement = Number(btn.value) + 1;
+        btn.value = incement;
+    })
+</script>

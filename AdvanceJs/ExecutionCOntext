@@ -1,0 +1,49 @@
+import { memo } from "react"
+
+First things run whn javacript eteute
+
+GLOBAL Execution context (which refere this)
+Functional Execution Context
+Eval Execution Context (mongoose)
+
+
+GLOBAL Execution contsxt runs in two phase
+
+1.Memory Creatinon phase (memory is craeted)
+2.Execution phase
+
+example
+let val1 = 10
+let val2 = 5
+
+function addNum(num1, num2){
+    let total = num1+ num2
+    return total
+}
+
+let result1 = addNum(val1, val2)
+let result2 = addNum(10, 20)
+
+Here first thing  runs in global Execution context (which refer this)
+1.Memory Creation phase
+then it goes to memory phase (it creates memoy value will be undefinde
+    here val1 and val2 is undefined
+    in function defination will goes
+    result1 and result2 will be undefined
+)
+FIrst cycle is completed
+
+2.Execution phase
+here val 1 = 10, val2=5
+
+addNum = it will create a new executaila context
+(New variable evionrmnt + new executional
+    context so memroy creation phase and excuetioh phase will be created again 
+    for ad num functo)
+
+1.Memory Creation phase (val1 , val2 amd total will be undefined )
+2.Execution phase (10 + 5  total = 15)
+now todal will be rutned to global Execution context
+note after createing execitioan context it will deletd)
+
+next process will contonues as we have addNum 

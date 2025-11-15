@@ -1,0 +1,11 @@
+let response = fetch()
+fetch do two tihing (internal macanicas)
+1 first allocta ememory 
+(deta, onfullfllied(resolve), on rejection(reject)) : resercer space in meorry secton
+2. web browsr/node : handle   api requests
+
+1.by default data is undefinder
+once request hit by browser(eirther resolve or reject) it handles by onfullfllied and rejec
+ and then send to data now data will be responible to fullfill respone veriable
+
+note=> onfullfllied and onReject are private arrays

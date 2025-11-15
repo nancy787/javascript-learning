@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>JAVAscript TimeInterval</h1>
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+</body>
+</html>
+
+<script>
+    // setInterval(() => {
+    //     console.log('nancy'+  Date.now());
+    // }, 2000);
+
+    const interval = function(){
+        console.log('nancy ' + Date.now());
+    }
+    // setInterval(interval, 2000)
+    // clearInterval(interval)
+    const header = document.querySelector('h1')
+    let date = new Date;
+
+    const changeTime = function(){        
+        header.innerHTML = 'nancy ' + Date.now();
+    }
+
+    document.querySelector('#start').addEventListener('click', function(){
+        setInterval(changeTime, 2000)         
+    });
+
+    document.querySelector('#stop').addEventListener('click', function() {
+         clearInterval(changeTime)
+    });
+</script>

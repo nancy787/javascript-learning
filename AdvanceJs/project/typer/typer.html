@@ -1,0 +1,28 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Auto Text</title>
+    <link rel="stylesheet" href="type.css" />
+  </head>
+  <body>
+    <p>
+      <span class="js">JavaScript</span> Is <span class="typed-text"></span>
+      <span class="cursor">&nbsp;</span>
+    </p>
+
+  <script>
+    let changeText = document.querySelector('.cursor')
+    let keyboardtext = document.querySelector('body').addEventListener('keydown', function(event){
+        if(event.keyCode == 8){
+            let currentText = changeText.textContent;
+            changeText.textContent = currentText.slice(0, -1);
+        }else{
+            changeText.appendChild(document.createTextNode(event.key))
+        }
+    })
+    
+  </script>
+  </body>
+</html>

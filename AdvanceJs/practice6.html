@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascruipt</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+      let list =  document.createElement('li')
+    //   let addListItem = document.createTextNode(langName)
+      list.appendChild(document.createTextNode(langName))      
+      let ul = document.querySelector('.language').appendChild(list)
+    }
+    addLanguage('node')
+    addLanguage('Java')
+    addLanguage('Python')
+
+    // edit 
+    const element =  document.querySelector("li:nth-child(2)")
+    // element.innerHTML = 'Ruby'
+   let newLi =  document.createElement('li')
+   newLi.innerHTML = 'PHP'
+    element.replaceWith(newLi)
+    // element.createTextNode()
+
+    // edit method 2
+    const first = document.querySelector('li:first-child');
+    first.outerHTML = '<li>AI</li>'
+
+
+    // Remove Elemene
+
+    const last  = document.querySelector('li:last-child');
+    last.remove()
+    
+</script>
+</html>
