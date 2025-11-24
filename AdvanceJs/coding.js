@@ -995,3 +995,72 @@ function missingNumber1(nums) {
 }
 
 console.log(missingNumber1( [0,1]));
+
+
+function containsDuplicate(nums) {
+    for(let i = 0; i< nums.length; i++){
+       for( let j = i+1 ; j < nums.length; j++) {
+        if(nums[i] === nums[j]) {
+            return true
+        }
+       }
+    }
+    return false
+}
+
+console.log(containsDuplicate([ -1000000000,1000000000]));
+// unique numver in an array 
+
+function findUniqueNumber(nums) {
+    for(let i = 0; i< nums.length; i++) {
+        const occurances = nums.filter( num =>  num === nums[i])
+        if(occurances.length === 1){
+            return nums[i]
+        }
+    }
+}
+
+console.log( findUniqueNumber ([1,2,1,3,2]) );
+
+
+function intersect(nums1, nums2) {
+    const int = []
+
+    for( let i = 0; i< nums1.length; i++) {
+        for(let j = 0 ; j < nums2.length ; j++ ) {
+            if(nums1[i] == nums2[j]) {
+               int.push( nums1[i])
+               nums2[j] = null
+               break
+            }
+        }
+    }
+    return int;
+}
+
+
+console.log( intersect ([4, 9, 5], [9,4,9, 8, 4]) );
+
+
+function intersectbest(nums1, nums2) {
+    const countMap = {};
+    const result = [];
+
+    // Count elements in nums1
+    for (let num of nums1) {
+        countMap[num] = (countMap[num] || 0) + 1;
+    }
+
+    // Check elements in nums2
+    for (let num of nums2) {
+        if (countMap[num] > 0) {
+            result.push(num);
+            countMap[num]--; // decrease count
+        }
+    }
+
+    return result;
+}
+
+console.log(intersectbest([4,9,5], [9,4,9,8,4])); // Output: [4,9] or [9,4]
+
